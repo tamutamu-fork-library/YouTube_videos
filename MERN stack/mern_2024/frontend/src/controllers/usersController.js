@@ -4,7 +4,7 @@ const loginUser = async (email, password) => {
     throw Error("All fields are required");
   }
 
-  const res = await fetch(`${import.meta.env.API_URL}/api/users/login`, {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -34,7 +34,7 @@ const registerUser = async (email, password, passwordConfirm) => {
     throw Error("Passwords do not match");
   }
 
-  const res = await fetch(`${import.meta.env.API_URL}/api/users`, {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

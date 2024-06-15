@@ -1,6 +1,6 @@
 /**************************** Get all posts  ********************************/
 const getPosts = async () => {
-  const res = await fetch(`${import.meta.env.API_URL}/api/posts`);
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts`);
   const data = await res.json();
 
   if (!res.ok) {
@@ -12,7 +12,7 @@ const getPosts = async () => {
 
 /**************************** Get user posts  ******************************/
 const getUserPosts = async () => {
-  const res = await fetch(`${import.meta.env.API_URL}/api/posts/user`, {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/user`, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
@@ -33,7 +33,7 @@ const createPost = async (title, body) => {
     throw Error("All fields are required");
   }
 
-  const res = await fetch(`${import.meta.env.API_URL}/api/posts`, {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const createPost = async (title, body) => {
 
 /**************************** Delete posts  ******************************/
 const deletePost = async (_id) => {
-  const res = await fetch(`${import.meta.env.API_URL}/api/posts/${_id}`, {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/${_id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -75,7 +75,7 @@ const updatePost = async (_id, title, body) => {
     throw Error("All fields are required");
   }
 
-  const res = await fetch(`${import.meta.env.API_URL}/api/posts/${_id}`, {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/${_id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
