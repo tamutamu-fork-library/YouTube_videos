@@ -7,7 +7,7 @@ import { usersRoutes } from "./routes/usersRoutes.js";
 const app = express();
 
 const allowCrossDomain = function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Origin', 'https://youtube-videos-mern2024.onrender.com')
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
   res.header(
     'Access-Control-Allow-Headers',
