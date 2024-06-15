@@ -1,7 +1,6 @@
 import User from "../models/UserModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import "dotenv/config.js";
 
 /************************************ Creating JWT token ************************************/
 const createToken = (_id) => {
