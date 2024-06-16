@@ -16,6 +16,7 @@ const allowCrossDomain = function(req, res, next) {
 
   // intercept OPTIONS method
   if ('OPTIONS' === req.method) {
+    res.header('Access-Control-Allow-Origin', 'https://youtube-videos-mern202411.onrender.com')
     res.send(200)
   } else {
     next()
